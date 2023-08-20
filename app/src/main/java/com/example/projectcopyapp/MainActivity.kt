@@ -489,7 +489,7 @@ fun CalendarComposable(
                 val isSelected = date == selectedDate
                 val db = ExerciseDatabase.getDatabase(LocalContext.current)
                 val exerciseList by db.exerciseDao().getAll().collectAsState(initial = emptyList())
-
+                // 깃 테스트
                 CalendarDay(
                     date = date,
                     isSelected = isSelected,
