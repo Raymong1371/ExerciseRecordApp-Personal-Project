@@ -3,6 +3,7 @@ package com.example.projectcopyapp.data
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 
 @Dao
@@ -19,5 +20,8 @@ interface ExerciseRecordDao {
 
     @Query("SELECT * FROM exercise_record_table")
     fun getAll(): Flow<List<ExerciseRecordEntity>>
+
+    @Update
+    suspend fun updateExerciseRecord(record: ExerciseRecordEntity)
 
 }
